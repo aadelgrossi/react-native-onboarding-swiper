@@ -70,19 +70,19 @@ Page.defaultProps = {
 };
 
 const { width, height } = Dimensions.get('window');
-const potrait = height > width;
+const portrait = height > width;
 
 const styles = {
   container: {
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: potrait ? 'center' : 'flex-start',
-    paddingTop: potrait ? 0 : 10,
+    justifyContent: portrait ? 'center' : 'flex-start',
+    paddingTop: portrait ? 0 : 10,
   },
   imageContainer: {
     flex: 0,
-    paddingBottom: potrait ? 60 : 10,
+    paddingBottom: portrait ? 60 : 10,
     alignItems: 'center',
     width: '100%',
   },
