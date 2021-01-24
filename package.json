@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/jfilter/react-native-onboarding-swiper"
   },
+  "types": "index.d.ts",
   "keywords": [
     "React",
     "Native",
