@@ -118,6 +118,7 @@ class Onboarding extends Component {
       alterBottomColor,
       bottomBarHeight,
       bottomBarColor,
+      bottomBarStyles,
       controlStatusBar,
       showSkip,
       showNext,
@@ -203,6 +204,7 @@ class Onboarding extends Component {
               isLight={isLight}
               bottomBarHeight={bottomBarHeight}
               bottomBarColor={bottomBarColor}
+              bottomBarStyles={bottomBarStyles}
               showSkip={showSkip}
               showNext={showNext}
               showDone={showDone}
@@ -244,6 +246,7 @@ Onboarding.propTypes = {
   bottomBarHighlight: PropTypes.bool,
   bottomBarHeight: PropTypes.number,
   bottomBarColor: PropTypes.string,
+  bottomBarStyles: ViewPropTypes.style,
   controlStatusBar: PropTypes.bool,
   showSkip: PropTypes.bool,
   showNext: PropTypes.bool,

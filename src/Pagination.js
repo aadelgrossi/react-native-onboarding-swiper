@@ -1,4 +1,4 @@
-import { View, StatusBar, I18nManager, Platform } from 'react-native';
+import { View, StatusBar, I18nManager, Platform, ViewPropTypes } from 'react-native';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -10,6 +10,7 @@ const Pagination = ({
   isLight,
   bottomBarHeight,
   bottomBarColor,
+  bottomBarStyles,
   controlStatusBar,
   showSkip,
   showNext,
@@ -76,9 +77,10 @@ const Pagination = ({
         height: bottomBarHeight,
         backgroundColor: bottomBarColor,
         ...styles.container,
+        ...bottomBarStyles,
       }}
     >
-      <View style={styles.buttonLeft}>{SkipButtonFinal}</View>
+      {showSkip && <View style={styles.buttonLeft}>{SkipButtonFinal}</View>}
       <Dots
         isLight={isLight}
         numPages={numPages}
@@ -100,6 +102,7 @@ Pagination.propTypes = {
   isLight: PropTypes.bool.isRequired,
   bottomBarHeight: PropTypes.number.isRequired,
   bottomBarColor: PropTypes.string.isRequired,
+  bottomBarStyles: ViewPropTypes.style,
   showNext: PropTypes.bool.isRequired,
   showSkip: PropTypes.bool.isRequired,
   showDone: PropTypes.bool.isRequired,
@@ -123,7 +126,6 @@ Pagination.propTypes = {
 
 const styles = {
   container: {
-    paddingHorizontal: 0,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
